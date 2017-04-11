@@ -20,7 +20,10 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
             if (attribute == null) return;
 
             if (attribute.OperationId != null)
+            {
                 operation.OperationId = attribute.OperationId;
+                operation.Summary = operation.Summary + "(" + operation.OperationId + ")";
+            }
 
             if (attribute.Tags != null)
                 operation.Tags = attribute.Tags;

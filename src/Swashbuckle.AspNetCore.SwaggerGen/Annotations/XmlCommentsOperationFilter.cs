@@ -52,6 +52,7 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
             var remarksNode = methodNode.SelectSingleNode(RemarksXPath);
             if (remarksNode != null)
                 operation.Description = XmlCommentsTextHelper.Humanize(remarksNode.InnerXml);
+            operation.Summary = operation.Summary;
         }
 
         private void ApplyParamsXmlToActionParameters(

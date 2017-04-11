@@ -16,6 +16,7 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
             SecurityDefinitions = new Dictionary<string, SecurityScheme>();
             OperationFilters = new List<IOperationFilter>();
             DocumentFilters = new List<IDocumentFilter>();
+            Tags = new List<Tag>();
         }
 
         public IDictionary<string, Info> SwaggerDocs { get; set; }
@@ -36,6 +37,8 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
 
         public IList<IDocumentFilter> DocumentFilters { get; private set; }
 
+        public List<Tag> Tags { get;  private set; }
+
         internal SwaggerGeneratorSettings Clone()
         {
             return new SwaggerGeneratorSettings
@@ -48,7 +51,8 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
                 DescribeAllParametersInCamelCase = DescribeAllParametersInCamelCase,
                 SecurityDefinitions = SecurityDefinitions,
                 OperationFilters = OperationFilters,
-                DocumentFilters = DocumentFilters
+                DocumentFilters = DocumentFilters,
+                Tags = Tags
             };
         }
     }

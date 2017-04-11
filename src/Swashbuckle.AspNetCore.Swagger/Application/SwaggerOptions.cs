@@ -14,7 +14,7 @@ namespace Swashbuckle.AspNetCore.Swagger
         /// <summary>
         /// Sets a custom route for the Swagger JSON endpoint(s). Must include the {documentName} parameter
         /// </summary>
-        public string RouteTemplate { get; set; } = "swagger/{documentName}/swagger.json";
+        public string RouteTemplate { get; set; } = "docs/{documentName}/api.json";
 
         /// <summary>
         /// Actions that can be applied SwaggerDocument's before they're serialized to JSON.

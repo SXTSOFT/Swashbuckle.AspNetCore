@@ -109,6 +109,11 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
             _swaggerGeneratorSettings.SecurityDefinitions.Add(name, securityScheme);
         }
 
+        public void AddTag(params Tag[] tags)
+        {
+            _swaggerGeneratorSettings.Tags.AddRange(tags);
+        }
+
         /// <summary>
         /// Provide a custom mapping, for a given type, to the Swagger-flavored JSONSchema
         /// </summary>
